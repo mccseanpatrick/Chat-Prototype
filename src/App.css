@@ -1,0 +1,55 @@
+html{
+  height: 100%;
+}
+
+.awsappsync{
+  height: 100%;
+}
+
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+#root{
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chatContainer{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.chatPanel{
+    flex:3;
+    text-align: center;
+    background: #e7fbfe;
+}
+
+.contactsPanel{
+    flex:1;
+    text-align: center;
+}
+
+.nav-bar{
+    background: #4DADF5;
+    flex:0.08;
+    color:white;
+    font-size: 30px;
+    text-align: center;
+    text-justify: center;
+}
