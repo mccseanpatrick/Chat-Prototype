@@ -1,0 +1,62 @@
+.chatPanel{
+    display: flex;
+    flex-direction: column;
+    margin:5px;
+    padding: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.messagesContainer{
+    flex: 9.5;
+}
+
+.messages{
+    flex: 9;
+    border: 1px solid #1d1d1d;
+    border-radius: 5px;
+}
+
+.messageForm{
+    display: flex;
+    flex: 1;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #1d1d1d;
+}
+
+.convoHeader{
+    background: #4DADF5;
+    flex: 0.5;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.textContainer{
+    margin: 10px 10px 10px 10px;
+    flex:9;
+}
+
+.textContainer > input{
+    height:4vh;
+    width:100%;
+    border-radius: 10px;
+}
+
+.submitContainer{
+    flex:1;
+    margin: 4px;
+}
+
+.submitContainer > input{
+    background-color: #4DADF5;
+    border: none;
+    height: 5vh;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2vw;
+}

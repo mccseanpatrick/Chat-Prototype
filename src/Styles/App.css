@@ -2,6 +2,12 @@ html{
   height: 100%;
 }
 
+.app-container{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .awsappsync{
   height: 100%;
 }
@@ -32,16 +38,17 @@ ul{
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
+    flex:1;
 }
 
 .chatPanel{
-    flex:3;
+    flex:2;
     text-align: center;
     background: #e7fbfe;
 }
 
 .contactsPanel{
-    flex:1;
+    flex:2;
     text-align: center;
 }
 
@@ -53,3 +60,13 @@ ul{
     text-align: center;
     text-justify: center;
 }
+
+
+.App {
+  margin-top: 15px;
+}
+
+.App .navbar-brand {
+  font-weight: bold;
+}
+
