@@ -1,8 +1,10 @@
 import React from "react";
 import '../../Styles/Contacts.css';
 import Contact from "./Contact"
+import AllUsers from "../../Queries/AllUsers";
+import {graphql} from "react-apollo";
 
-export default class Contacts extends React.Component{
+class Contacts extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -11,8 +13,8 @@ export default class Contacts extends React.Component{
     }
 
     render(){
-        const conts = ["Sean", "Rajkumar", "Ron"];
-        const contacts = conts.map((contact) => <Contact name = {contact}/>)
+        if (this.props.loading) return <div>Loading...</div>
+        const contacts = this.props.users.map((contact, index) => <Contact name = {contact.username} handleSelect = {this.props.handleSelect} key = {index}/>)
         return(
             <div className="contacts">
                 <div className="contactsHeader">
@@ -25,3 +27,14 @@ export default class Contacts extends React.Component{
         );           
     }  
 }
+
+export default graphql(AllUsers, {
+    options: (props,) => ({
+        fetchPolicy: 'no-cache',
+    }),
+    props: (props,) => ({
+            loading: props.data.loading,
+            users: props.data.allUser
+        }
+    )
+})(Contacts)

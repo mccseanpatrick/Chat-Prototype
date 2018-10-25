@@ -13,8 +13,11 @@
     flex: 1;
     max-height: 4vh;
     margin: 2px;
-    border-radius: 5px;
     text-align: center;
+}
+
+.contact:hover{
+    background: #0c7ae0;
 }
 
 .contactsContainer{

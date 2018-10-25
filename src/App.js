@@ -59,4 +59,5 @@ const WithProvider = () => (
   </ApolloProvider>
 );
 
+
 export default WithProvider;

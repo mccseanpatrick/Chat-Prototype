@@ -9,6 +9,8 @@
 
 .messagesContainer{
     flex: 9.5;
+    display: flex;
+    flex-direction: column;
 }
 
 .messages{

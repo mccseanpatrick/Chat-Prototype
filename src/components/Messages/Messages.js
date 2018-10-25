@@ -2,9 +2,9 @@ import React from 'react';
 import '../../Styles/Messages.css';
 
 function Messages(props){
-    let fakeMessages = ["1", "2", "3"]
-    const messageItems = fakeMessages.map((message) =>
-    <li>{message}</li>
+    console.log(props.messages);
+    const messageItems = props.messages.map((message, index) =>
+        <li key={index}>{message.content}</li>
     );
     return (
         <div className="messages">

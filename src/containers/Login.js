@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "../Styles/Login.css";
+import { Auth as AWSAuth, } from 'aws-amplify';
+import {graphql} from "react-apollo";
+import CreateUser from "../Mutations/CreateUserMutation"
 
-import { Auth as AWSAuth, } from 'aws-amplify'
-
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,6 +29,7 @@ export default class Login extends Component {
     try {
         await AWSAuth.signIn(this.state.username, this.state.password);
         this.props.userHasAuthenticated(true);
+        this.props.createUser(this.state);
         this.props.history.push("/chat");
     } catch (e) {
         alert(e.message);
@@ -68,3 +70,16 @@ export default class Login extends Component {
     );
   }
 }
+
+export default graphql(CreateUser, {
+  options: (props,) => ({
+      fetchPolicy: 'no-cache',
+  }),
+  props: (props,) => ({
+      createUser: (user) => {
+          props.mutate({
+              variables: user
+          })
+      }
+  })
+})(Login);

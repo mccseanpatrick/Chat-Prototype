@@ -5,11 +5,10 @@ import "../Styles/SideContainer.css"
 
 export default class SidePanel extends Component {
     render() {
-      let fakeMessages = ["1", "2", "3"]
       return (    
           <div className="SideContainer">
-                  <Contacts/>
-                  <Conversations/>
+                  <Contacts users = {this.props.users} handleSelect = {this.props.handleSelect}/>
+                  <Conversations handleSelectConversation = {this.props.handleSelectConversation}/>
           </div>
       );
     }

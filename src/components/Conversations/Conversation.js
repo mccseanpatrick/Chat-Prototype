@@ -2,10 +2,9 @@ import React from "react";
 import '../../Styles/Conversations.css';
 
 function Conversation(props){
-    return(    
-        <div className="conversation">
-            {props.name}
-        </div>);
+    return(
+        <input className="conversation" type="submit" value={props.name} onClick={props.handleSelectConversation(props)}/>
+    );    
 }
 
 export default Conversation
