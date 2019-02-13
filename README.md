@@ -1,3 +1,8 @@
 ## Prototype Chat App
 
--- Will be adding an Auth section with login page & react shortly
+-- Sample app build using AWS AppSync and graphQL
+
+I built this app as a prototype to start working with serveress applications.
+It's basic purpose to to faciliate messaging between two users.
+
+*This is unfinished*
